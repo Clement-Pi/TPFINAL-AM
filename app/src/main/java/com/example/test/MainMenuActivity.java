@@ -35,20 +35,14 @@ public class MainMenuActivity extends AppCompatActivity {
                 startActivity(new Intent(MainMenuActivity.this, MainActivity.class));
             }
         });
-        /*
-        final Button button2 = findViewById(R.id.buttonquitj);
-        button.setOnClickListener(new View.OnClickListener() {
+
+        final Button button3 = findViewById(R.id.buttonmenu);
+        button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                finish();
+                startActivity(new Intent(MainMenuActivity.this, menu.class));
             }
         });
 
-        final Button button3 = findViewById(R.id.buttonquitl);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                finish();
-            }
-        });*/
     }
 
 }

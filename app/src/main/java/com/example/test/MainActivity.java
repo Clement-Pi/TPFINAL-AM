@@ -2,12 +2,19 @@ package com.example.test;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
+
+public class MainActivity extends YouTubeBaseActivity {
+
+    YouTubePlayerView mYoutubePlayerView;
+    YouTubePlayer.OnInitializedListener mOnInitializedListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +27,28 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        mYoutubePlayerView = (YouTubePlayerView) findViewById(R.id.youtubePlay);
+        mOnInitializedListener = new YouTubePlayer.OnInitializedListener() {
+            @Override
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+                //youTubePlayer.loadVideo("Lien de la video ici");
+            }
+
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
+            }
+        };
+    final Button buttonPlay = findViewById(R.id.buttonplay);
+    buttonPlay.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            mYoutubePlayerView.initialize(YoutubeConfig.getApiKey(), mOnInitializedListener);
+        }
+    });
+
+
     }
 
-    public void backToMainMenu(){
-        finish();
-    }
 }

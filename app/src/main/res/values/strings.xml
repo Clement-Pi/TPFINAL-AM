@@ -1,8 +1,14 @@
 <resources>
-    <string name="app_name">test</string>
+    <string name="app_name">Tinder de Youtube</string>
     <string name="voir_vid_os">Voir vidéos</string>
     <string name="vid_os_aim_es">Vidéos aimées</string>
     <string name="configuration">Configuration</string>
     <string name="quitter">Quitter</string>
     <string name="retour_au_menu">Retour au Menu</string>
+    <string name="nombre_de_r_sultat_par_requ_te">Nombre de résultat par requête :</string>
+    <string name="_16">16</string>
+    <string name="_8">8</string>
+    <string name="_12">12</string>
+    <string name="dur_e_minimale_des_vid_os">Durée minimale des vidéos (s) :</string>
+    <string name="dur_e_maximale_des_vid_os_mn">Durée maximale des vidéos (mn) :</string>
 </resources>
